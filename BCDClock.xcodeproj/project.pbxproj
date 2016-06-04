@@ -3,16 +3,41 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		555E1C481D024F0300782E63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 555E1C471D024F0300782E63 /* main.m */; };
 		555E1C4B1D024F2A00782E63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 555E1C4A1D024F2A00782E63 /* AppDelegate.m */; };
 		555E1C4E1D024F3200782E63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 555E1C4C1D024F3200782E63 /* Images.xcassets */; };
-		555E1C4F1D024F3200782E63 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 555E1C4D1D024F3200782E63 /* Info.plist */; };
 		555E1C531D024F9A00782E63 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 555E1C511D024F9A00782E63 /* MainMenu.xib */; };
+		55E5B0C01D03438E00BF22B4 /* BCDClockHelper.app in Copy Launch Helper */ = {isa = PBXBuildFile; fileRef = 55E5B0BC1D03433500BF22B4 /* BCDClockHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		55E5B0C21D0343D600BF22B4 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E5B0C11D0343D600BF22B4 /* ServiceManagement.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		55E5B0BB1D03433500BF22B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55E5B0B71D03433500BF22B4 /* BCDClockHelper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 55E5B0A31D0342F200BF22B4;
+			remoteInfo = BCDClockHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		55E5B0BF1D03438400BF22B4 /* Copy Launch Helper */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				55E5B0C01D03438E00BF22B4 /* BCDClockHelper.app in Copy Launch Helper */,
+			);
+			name = "Copy Launch Helper";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -25,6 +50,8 @@
 		555E1C4C1D024F3200782E63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		555E1C4D1D024F3200782E63 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		555E1C521D024F9A00782E63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		55E5B0B71D03433500BF22B4 /* BCDClockHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = BCDClockHelper.xcodeproj; sourceTree = "<group>"; };
+		55E5B0C11D0343D600BF22B4 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		F5529142021D063501A80A15 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		F5529143021D063501A80A15 /* SystemUIPlugin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemUIPlugin.framework; path = /System/Library/PrivateFrameworks/SystemUIPlugin.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
@@ -34,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55E5B0C21D0343D600BF22B4 /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +71,7 @@
 		089C166AFE841209C02AAC07 /* ClassicMenuExtra */ = {
 			isa = PBXGroup;
 			children = (
+				55E5B0B71D03433500BF22B4 /* BCDClockHelper.xcodeproj */,
 				08FB77AFFE84173DC02AAC07 /* Classes */,
 				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
 				19C28FB8FE9D52D311CA2CBB /* Products */,
@@ -53,6 +82,7 @@
 		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				55E5B0C11D0343D600BF22B4 /* ServiceManagement.framework */,
 				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
 				F5529142021D063501A80A15 /* Carbon.framework */,
 				F5529143021D063501A80A15 /* SystemUIPlugin.framework */,
@@ -91,6 +121,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		55E5B0B81D03433500BF22B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55E5B0BC1D03433500BF22B4 /* BCDClockHelper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -101,6 +139,7 @@
 				555E1C211D024ED400782E63 /* Sources */,
 				555E1C221D024ED400782E63 /* Frameworks */,
 				555E1C231D024ED400782E63 /* Resources */,
+				55E5B0BF1D03438400BF22B4 /* Copy Launch Helper */,
 			);
 			buildRules = (
 			);
@@ -117,14 +156,20 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0730;
 				TargetAttributes = {
 					555E1C241D024ED400782E63 = {
 						CreatedOnToolsVersion = 6.4;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
 			buildConfigurationList = 556FD8980EC238AB00AE208C /* Build configuration list for PBXProject "BCDClock" */;
-			compatibilityVersion = "Xcode 2.4";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -140,6 +185,12 @@
 			);
 			mainGroup = 089C166AFE841209C02AAC07 /* ClassicMenuExtra */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 55E5B0B81D03433500BF22B4 /* Products */;
+					ProjectRef = 55E5B0B71D03433500BF22B4 /* BCDClockHelper.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				555E1C241D024ED400782E63 /* BCDClock */,
@@ -147,12 +198,21 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		55E5B0BC1D03433500BF22B4 /* BCDClockHelper.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = BCDClockHelper.app;
+			remoteRef = 55E5B0BB1D03433500BF22B4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		555E1C231D024ED400782E63 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				555E1C4F1D024F3200782E63 /* Info.plist in Resources */,
 				555E1C4E1D024F3200782E63 /* Images.xcassets in Resources */,
 				555E1C531D024F9A00782E63 /* MainMenu.xib in Resources */,
 			);
@@ -189,8 +249,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -224,8 +282,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dmgaudio.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -236,8 +296,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -265,55 +323,19 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dmgaudio.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
 			name = Deployment;
 		};
-		555E1C421D024ED400782E63 /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Default;
-		};
 		556FD8920EC238AA00AE208C /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Development;
 		};
@@ -323,12 +345,6 @@
 			};
 			name = Deployment;
 		};
-		556FD8940EC238AA00AE208C /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Default;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -337,20 +353,18 @@
 			buildConfigurations = (
 				555E1C401D024ED400782E63 /* Development */,
 				555E1C411D024ED400782E63 /* Deployment */,
-				555E1C421D024ED400782E63 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Deployment;
 		};
 		556FD8980EC238AB00AE208C /* Build configuration list for PBXProject "BCDClock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				556FD8920EC238AA00AE208C /* Development */,
 				556FD8930EC238AA00AE208C /* Deployment */,
-				556FD8940EC238AA00AE208C /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Deployment;
 		};
 /* End XCConfigurationList section */
 	};
