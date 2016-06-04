@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -25,32 +26,39 @@
                 <menuItem title="Date:" id="EPP-CQ-IT5">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="Type" id="t7Q-WN-uok">
+                <menuItem title="Settings" id="t7Q-WN-uok">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" id="ymJ-Sa-uvM">
+                    <menu key="submenu" title="Settings" id="ymJ-Sa-uvM">
                         <items>
                             <menuItem title="BCD" id="fKL-H0-JSP">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="doType0:" target="Voe-Tx-rLC" id="9vY-3b-eZO"/>
+                                    <action selector="setType:" target="Voe-Tx-rLC" id="lkh-4T-ho8"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Binary" id="0TU-Ep-Ez0">
+                            <menuItem title="Binary" tag="1" id="0TU-Ep-Ez0">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="doType1:" target="Voe-Tx-rLC" id="l0W-rt-JQr"/>
+                                    <action selector="setType:" target="Voe-Tx-rLC" id="vra-AI-p6w"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Time" id="q6U-ru-n39">
+                            <menuItem title="Time" tag="2" id="q6U-ru-n39">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="doType2:" target="Voe-Tx-rLC" id="UAz-6i-cjZ"/>
+                                    <action selector="setType:" target="Voe-Tx-rLC" id="Xqt-D6-U49"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="FuzzyTime" id="hvv-SU-1j4">
+                            <menuItem title="FuzzyTime" tag="3" id="hvv-SU-1j4">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="doType3:" target="Voe-Tx-rLC" id="j4x-gx-RbS"/>
+                                    <action selector="setType:" target="Voe-Tx-rLC" id="fNl-vl-jSb"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="m7d-aD-xSn"/>
+                            <menuItem title="Open on Login" id="KHr-sc-R3a">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="setLogin:" target="Voe-Tx-rLC" id="m3v-Vg-3pT"/>
                                 </connections>
                             </menuItem>
                         </items>

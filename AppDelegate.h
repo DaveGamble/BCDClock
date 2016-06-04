@@ -13,10 +13,8 @@
 @property (nonatomic, strong) IBOutlet NSMenu *menu;
 @property (nonatomic, strong) IBOutlet NSMenu *submenu;
 
--(IBAction) doType0:(id)sender;
--(IBAction) doType1:(id)sender;
--(IBAction) doType2:(id)sender;
--(IBAction) doType3:(id)sender;
+-(IBAction) setType:(id)sender;
+-(IBAction) setLogin:(id)sender;
 
 @end
 

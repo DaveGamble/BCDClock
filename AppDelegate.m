@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <ServiceManagement/ServiceManagement.h>
 
 @interface NSStatusBar (can_position)
 - (NSStatusItem *)_statusItemWithLength:(CGFloat)length	withPriority:(int)priority;
@@ -25,8 +26,13 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	// Settings:
 	[[NSUserDefaults standardUserDefaults] registerDefaults:@{@"type": [NSNumber numberWithInteger:3]}];
-	[self setType:[[NSUserDefaults standardUserDefaults] integerForKey:@"type"]];
-
+	[self setTypeInt:[[NSUserDefaults standardUserDefaults] integerForKey:@"type"]];
+	// Do we start up on login?
+	NSArray* jobDicts = CFBridgingRelease(SMCopyAllJobDictionaries(kSMDomainUserLaunchd));
+	if (jobDicts && [jobDicts count] > 0) for (NSDictionary* job in jobDicts)
+		if ([@"com.dmgaudio.BCDClockHelper" isEqualToString:[job objectForKey:@"Label"]] && [[job objectForKey:@"OnDemand"] boolValue])
+				[[self.submenu itemAtIndex:5] setState:NSOnState];
+	
 	// Menu is shut.
 	self.menuIsOpen=false;
 	// Set up the statusitem.
@@ -58,18 +64,20 @@
 	}
 }
 
-- (void)setType:(NSInteger)type
+- (void)setTypeInt:(NSInteger)type
 {
 	self._type=type;
 	for (int i=0;i<4;i++) [[self.submenu itemAtIndex:i] setState:(i==type)?NSOnState:NSOffState];
 	[[NSUserDefaults standardUserDefaults] setInteger:type forKey:@"type"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }
+-(IBAction) setType:(id)sender {[self setTypeInt:[sender tag]];}
 
--(IBAction) doType0:(id)sender {[self setType:0];}
--(IBAction) doType1:(id)sender {[self setType:1];}
--(IBAction) doType2:(id)sender {[self setType:2];}
--(IBAction) doType3:(id)sender {[self setType:3];}
+-(IBAction) setLogin:(id)sender
+{
+	[sender setState:1-[sender state]];
+	SMLoginItemSetEnabled ((__bridge CFStringRef)@"com.dmgaudio.BCDClockHelper", [sender state]==NSOnState);
+}
 
 static char hours[12][16]={"twelve","one","two","three","four","five","six","seven","eight","nine","ten","eleven"};
 static char minutes[13][20]={"shortly after","five past","ten past","quarter past","twenty past","twentyfive past","half past",
